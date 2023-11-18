@@ -12,12 +12,19 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-// import img from "../assets/splash.png";
+import { getAuth, signInAnonymously } from "firebase/auth";
+
 const imgBackground = require("../assets/bg-startscreen.png");
 
 const Start = ({ navigation }) => {
   const [background, setBackground] = useState();
   const [username, setUsername] = useState();
+
+  const auth = getAuth();
+
+  const signInUser = () => {
+    signInAnonymously(auth).then((result) => navigation.navigate(""));
+  };
 
   //   const colorsArray = ["green", "blue", "red", "black"];
 
