@@ -5,6 +5,7 @@ import Start from "./components/Start";
 import Chat from "./components/Chat";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -31,6 +32,9 @@ const App = () => {
   // Initialize Firebase
 
   const app = initializeApp(firebaseConfig);
+
+  // Initialize Cloud Firestore and get a reference to the service
+  const db = getFirestore(app);
 
   return (
     <NavigationContainer>

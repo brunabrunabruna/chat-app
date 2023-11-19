@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
+  Alert,
   Button,
   ImageBackground,
   ImageBase,
@@ -23,7 +24,19 @@ const Start = ({ navigation }) => {
   const auth = getAuth();
 
   const signInUser = () => {
-    signInAnonymously(auth).then((result) => navigation.navigate(""));
+    signInAnonymously(auth)
+      .then((result) => {
+        navigation.navigate("Chat", {
+          userID: result.user.uid,
+          name: username,
+          color: background,
+        });
+        Alert.alert("signed in successfully");
+      })
+      .catch((error) => {
+        Alert.alert("unable tot sign it, try again later");
+        console.log(error);
+      });
   };
 
   //   const colorsArray = ["green", "blue", "red", "black"];
@@ -90,10 +103,7 @@ const Start = ({ navigation }) => {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              navigation.navigate("Chat", {
-                name: username,
-                color: background,
-              });
+              signInUser();
             }}
           >
             <Text style={styles.buttonText}>Start Chatting</Text>
