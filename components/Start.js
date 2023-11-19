@@ -25,6 +25,7 @@ const Start = ({ navigation }) => {
 
   const signInUser = () => {
     signInAnonymously(auth)
+      //after user has been signed in anonymously, navigate to Chat, and pass this object to it (available there through route.params.color for ex.\)
       .then((result) => {
         navigation.navigate("Chat", {
           userID: result.user.uid,
@@ -34,7 +35,7 @@ const Start = ({ navigation }) => {
         Alert.alert("signed in successfully");
       })
       .catch((error) => {
-        Alert.alert("unable tot sign it, try again later");
+        Alert.alert("unable to sign it, try again later");
         console.log(error);
       });
   };
@@ -100,12 +101,7 @@ const Start = ({ navigation }) => {
             </View>
           </View>
           {/* button to start chatting, links to chat.js */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              signInUser();
-            }}
-          >
+          <TouchableOpacity style={styles.button} onPress={signInUser}>
             <Text style={styles.buttonText}>Start Chatting</Text>
           </TouchableOpacity>
         </View>

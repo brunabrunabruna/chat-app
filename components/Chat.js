@@ -24,9 +24,10 @@ const Chat = ({ route, navigation, db }) => {
   const [messages, setMessages] = useState([]);
   const onSend = (newMessages) => {
     addDoc(collection(db, "messages"), newMessages[0]);
-    console.log(messages);
+    // console.log(messages);
   };
 
+  //customizes chat bubble colors
   const renderBubble = (props) => {
     return (
       <Bubble
@@ -64,9 +65,11 @@ const Chat = ({ route, navigation, db }) => {
     };
   }, []);
   useEffect(() => {
+    //sets chat page title to username given on start page
     navigation.setOptions({ title: name });
   });
   return (
+    //sets background color to the color selected in start
     <View style={[styles.container, { backgroundColor: color }]}>
       <GiftedChat
         messages={messages}
@@ -85,10 +88,7 @@ const Chat = ({ route, navigation, db }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // fontSize: 40,
     flex: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
   },
   text: {
     fontSize: 40,
