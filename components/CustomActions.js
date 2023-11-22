@@ -38,6 +38,7 @@ const CustomActions = ({
     });
   };
 
+  //picks image from users library
   const pickImage = async () => {
     let permissions = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (permissions?.granted) {
@@ -47,6 +48,7 @@ const CustomActions = ({
     }
   };
 
+  //gets users current location
   const takePhoto = async () => {
     let permissions = await ImagePicker.requestCameraPermissionsAsync();
     if (permissions?.granted) {
@@ -56,7 +58,7 @@ const CustomActions = ({
     }
   };
 
-  //
+  // gets current
   const getLocation = async () => {
     let permissions = await Location.requestForegroundPermissionsAsync();
     if (permissions?.granted) {
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
   iconText: {
     color: "#b2b2b2",
     fontWeight: "bold",
-    fontSize: 10,
+    fontSize: 16,
     backgroundColor: "transparent",
     textAlign: "center",
   },

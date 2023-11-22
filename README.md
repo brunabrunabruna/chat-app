@@ -14,3 +14,10 @@ location.
 - Google Firebase authentication
 - Firebase Cloud Storage
 - Gifted Chat library
+
+## Key Features
+
+● Users can enter their name and choose a background color for the chat screen before joining the chat.
+● The conversation is displayed, as well as an input field and submit button.
+● The chat provides users with two additional communication features: sending images and location data.
+● Data gets stored online and offline.
