@@ -8,6 +8,7 @@ location.
 
 ![meet app screenshot](/assets/screenshot1.jpg)
 ![meet app screenshot](/assets/screenshot2.jpg)
+<img src="/assets/screenshot1.jpg" alt="screenshot" style="width:200px;"/>
 
 ## Technologies:
 
