@@ -21,3 +21,9 @@ location.
 ● The conversation is displayed, as well as an input field and submit button.
 ● The chat provides users with two additional communication features: sending images and location data.
 ● Data gets stored online and offline.
+
+## Test it yourself
+
+1. clone this Github project into a new folder
+2. run npm install
+3. download the expo app on your phone, or use an android emulator to test the app.
